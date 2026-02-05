@@ -12,7 +12,7 @@ function Checkout() {
   );
 
   const placeOrder = async () => {
-    await fetch("http://localhost:5000/api/orders", {
+    await fetch("http://blooms:flower-shop.onrender.com/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
