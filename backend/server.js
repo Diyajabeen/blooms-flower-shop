@@ -24,12 +24,12 @@ const orderSchema = new mongoose.Schema({
 const Order = mongoose.model("Order", orderSchema);
 
 // Routes
-app.get("/products", async (req, res) => {
+app.get("/api/products", async (req, res) => {
   const products = await Product.find();
   res.json(products);
 });
 
-app.post("/orders", async (req, res) => {
+app.post("/api/orders", async (req, res) => {
   const { items, total, address, deliveryDate } = req.body;
   const order = new Order({ items, total, address, deliveryDate });
   await order.save();
@@ -39,3 +39,7 @@ app.post("/orders", async (req, res) => {
 app.listen(5000, () => console.log("Server running on port 5000"));
 const orderRoutes = require("./routes/orderRoutes");
 app.use("/api/orders", orderRoutes);
+
+
+
+
