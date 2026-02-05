@@ -5,7 +5,7 @@ function Shop() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://blooms-flower-shop.onrender.com/api/products")
+   fetch("https://blooms-flower-shop.onrender.com/api/products")
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.log(err));
